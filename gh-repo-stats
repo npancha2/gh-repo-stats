@@ -841,6 +841,7 @@ ParseRepos() {
       if [ ${ERROR_CODE} -eq 0 ]; then
         # Found this in the csv already
         echo "Repo:[${OWNER}/${REPO_NAME}] has previously been analyzed, moving on..."
+        sleep 60
       elif [ ${ERROR_CODE} -ne 0 ] && [[ -z "${REPO_LIST_FILE}" ]]; then
         echo "Analyzing Repo: ${REPO_NAME}"
         ParseRepoData "${REPO_DATA}"

@@ -8,7 +8,7 @@
 
 1. Install [GitHub CLI](https://cli.github.com/)
 1. Install [jq](https://stedolan.github.io/jq/download/)
-1. `gh extension install mona-actions/gh-repo-stats`
+1. `gh extension install npancha2/gh-repo-stats`
 1. `gh repo-stats --org <ORG_NAME>`
 1. Profit! 💰 💸 🤑 💸 💰
 
