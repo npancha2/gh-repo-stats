@@ -615,6 +615,8 @@ CheckAPILimit() {
     echo "API rate limiting is not enabled."
   else
     printf "Rate limits remaining: %'d GraphQL points  %'d REST calls\n" "${GRAPHQL_REMAINING}" "${CORE_REMAINING}"
+    sleep 60
+    printf "sleeping for 60 seconds to avoid secondary rate limit"
   fi
 }
 ################################################################################
@@ -841,7 +843,6 @@ ParseRepos() {
       if [ ${ERROR_CODE} -eq 0 ]; then
         # Found this in the csv already
         echo "Repo:[${OWNER}/${REPO_NAME}] has previously been analyzed, moving on..."
-        sleep 60
       elif [ ${ERROR_CODE} -ne 0 ] && [[ -z "${REPO_LIST_FILE}" ]]; then
         echo "Analyzing Repo: ${REPO_NAME}"
         ParseRepoData "${REPO_DATA}"
